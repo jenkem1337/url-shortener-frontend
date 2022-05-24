@@ -18,9 +18,11 @@ export default class ShortUrlDetailView {
         this.state = state
     }
     initViewAction(){
+        if(location.search){
+            this.handleUrlCodeWithQueryString()
+        }
         document.querySelector('title').textContent = 'Short Url Detail'
         document.querySelector('#url-code-button').addEventListener('click', (e) => this.sendUrlCode(e))
-        this.handleUrlCodeWithQueryString()
     }
     getHTML(){
         return `<h1>Find Short Url</h1>
