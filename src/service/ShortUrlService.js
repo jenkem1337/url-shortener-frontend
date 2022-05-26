@@ -20,12 +20,6 @@ export default class ShortUrlService {
             return new ErrorResponse(res.errorMessage)
         }
         
-        //if redis cache handle by server, howManyTimeClicked property return undefined
-        //becouse of i persist howManyTimeClicked property in session storage 
-        if(typeof(res.howManyTimeClicked) === 'undefined'){
-            res.howManyTimeClicked = sessionStorage.getItem('howManyTimeClicked')
-        }
-        sessionStorage.setItem('howManyTimeClicked', res.howManyTimeClicked)
         return new ShortUrlDetailResponse(res.longUrl, res.shortUrl, res.howManyTimeClicked)
     }                                
 }
