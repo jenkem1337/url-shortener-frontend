@@ -1,2 +1,2 @@
 # url-shortener-frontend
-Modal View Presenter And State Design Pattern
+Model View Presenter And State Design Pattern
